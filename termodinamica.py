@@ -12,6 +12,8 @@ def calcular():
         temperatura = pasajeTemp(temperatura)
     if(unidad_presion_seleccionada.get() == "mm Hg"):
         presion = pasajePresion(presion)
+    if(unidad_volumen_seleccionada.get() != "Litros"):
+        volumen = pasajeVolumen(volumen)
 
 
     if(operacion == "Calcular Presion"):
@@ -39,16 +41,18 @@ def pasajePresion(presion):
 
 def pasajeVolumen(volumen):
     unidad = unidad_volumen_seleccionada.get()
-    if(unidad == "mililitro"):
-        return volumen*0.001
-    if(unidad == "centimetro cubico"):
-        return volumen*0.001
-    if(unidad == "decimetro cubico"):
+    if unidad == "mililitro":
+        return volumen * 0.001
+    if unidad == "centimetro cubico":
+        return volumen * 0.001
+    if unidad == "decimetro cubico":
         return volumen
-    if(unidad == "metro cubico"):
-        return volumen*1000
-    if(unidad == "galon estadounidense"):
-        return volumen*3.785
+    if unidad == "metro cubico":
+        return volumen * 1000
+    if unidad == "galon estadounidense":
+        return volumen * 3.785
+
+    return volumen
 
 
 
@@ -92,7 +96,7 @@ entry2.grid(row=1, column=1, padx=10, pady=10)
 
 unidad_volumen_seleccionada = tk.StringVar()
 menu_operacionesvolumen = ttk.Combobox(root, textvariable=unidad_volumen_seleccionada)
-menu_operacionesvolumen['values'] = ["litro", "mililitro" "decimetro cubico", "centimetro cubico", "metro cubico", "galon estadounidense"]
+menu_operacionesvolumen['values'] = ["litro", "mililitro", "decimetro cubico", "centimetro cubico", "metro cubico", "galon estadounidense"]
 menu_operacionesvolumen.grid(row=1, column=2, padx=10, pady=10)
 menu_operacionesvolumen.current(0)
 
