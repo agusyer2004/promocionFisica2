@@ -75,6 +75,7 @@ def main():
         fase_inicial = float(input("Fase inicial (en radianes): "))
 
         # Inicia la gráfica interactiva con los valores ingresados
+        # jdkasjd
         graficar_onda_interactiva(amplitud_inicial, frecuencia_inicial, fase_inicial)
 
     except ValueError:
